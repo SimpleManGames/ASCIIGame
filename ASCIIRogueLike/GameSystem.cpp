@@ -36,7 +36,7 @@ void GameSystem::playGame() {
 		_player.drawStats();
 		_level.draw();
 		playerMove();
-		if (checkExit()) { savePlayer("Player.txt"); exit(1); }
+		if (checkExit()) { savePlayer("Player.txt"); break; }
 	}
 
 }
@@ -44,8 +44,7 @@ void GameSystem::playGame() {
 void GameSystem::exitGame() {
 	exit(1);
 }
-bool GameSystem::checkExit()
-{
+bool GameSystem::checkExit() {
 	if (GetAsyncKeyState(VK_ESCAPE)) { return true; }
 	return false;
 }
@@ -70,7 +69,7 @@ void GameSystem::newPlayer() {
 void GameSystem::savePlayer(string fileName) {
 	ofstream file;
 
-	file.open(fileName, ios::binary);
+	file.open(fileName, ios::in);
 	int tmp;
 
 	if (file.fail()) {
@@ -80,19 +79,19 @@ void GameSystem::savePlayer(string fileName) {
 	}
 
 	tmp = _player.getLvl();
-	file << tmp << endl << endl;
+	file << tmp << endl;
 	tmp = _player.getXP();
-	file << tmp << endl << endl;
+	file << tmp << endl;
 	tmp = _player.getAtk();
-	file << tmp << endl << endl;
+	file << tmp << endl;
 	tmp = _player.getDef();
-	file << tmp << endl << endl;
+	file << tmp << endl;
 	tmp = _player.getHP();
 }
 
 void GameSystem::loadPlayer(std::string fileName) {
 	std::ifstream file;
-	file.open(fileName, ios::binary);
+	file.open(fileName, ios::out);
 
 	int tmp;
 	int i = 0;
@@ -112,7 +111,7 @@ void GameSystem::loadPlayer(std::string fileName) {
 
 void GameSystem::playerMove() {
 	char input;
-	std::cout << "Enter a move command (W/A/S/D)" << std::endl;
+	std::cout << "Enter a command (W/A/S/D)" << std::endl;
 	input = _getch();
 
 	_level.movePlayer(input, _player);

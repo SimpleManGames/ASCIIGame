@@ -7,7 +7,7 @@ void GameState::changeState(States newState) {
 	currentState = newState;
 }
 
-bool is_textfile_empty(const char* filename)
+bool is_textfile_empty(string filename)
 {
 	string   s;
 	ifstream f(filename, ios::binary);
@@ -43,6 +43,7 @@ vector <string> GameState::setTextFile(vector <string> &data, string fileName) {
 		system("pause");
 		exit(1);
 	}
+
 	string line;
 	while (getline(file, line)) {
 		data.push_back(line);
@@ -53,6 +54,7 @@ vector <string> GameState::setTextFile(vector <string> &data, string fileName) {
 
 vector<string> & GameState::getSplashData() { return _splashData; }
 vector<string> & GameState::getMenuData() { return _menuData; }
+vector<string> & GameState::getHowToData() { return _howToData; }
 
 int  GameState::getNumValid(int min, int max)
 {

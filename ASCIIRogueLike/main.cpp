@@ -15,14 +15,15 @@ int main() {
 	GameState gameState(GameState::SPLASH);
 	GameSystem gameSystem(mapName);
 	gameSystem.setWindow(800, 600);
+	gameState.setTextFile(gameState.getSplashData(), "Splash.txt");
+	gameState.setTextFile(gameState.getMenuData(), "Menu.txt");
+	gameState.setTextFile(gameState.getHowToData(), "HowTo.txt");
 	while (gameState.currentState != GameState::EXIT) {
 		switch (gameState.currentState) {
 		case GameState::SPLASH:
-			gameState.setTextFile(gameState.getSplashData(), "Splash.txt");
 			gameState.drawTextFile(gameState.getSplashData());
 			cin.get();
 		case GameState::MENU:
-			gameState.setTextFile(gameState.getMenuData(), "Menu.txt");
 			gameState.drawTextFile(gameState.getMenuData());
 			gameState.doMenuThings();
 			break;
@@ -36,11 +37,18 @@ int main() {
 			gameSystem.loadPlayer("Player.txt");
 			break;
 		case GameState::PLAY:
+			gameSystem.loadPlayer("Player.txt");
 			gameSystem.playGame();
+			gameState.currentState = GameState::EXIT;
 			break;
 		case GameState::HOW:
+			system("CLS");
+			gameState.drawTextFile(gameState.getHowToData());
+			system("pause");
+			gameState.currentState = GameState::MENU;
 			break;
 		case GameState::EXIT:
+			gameSystem.savePlayer("Player.txt");
 			gameState.currentState = GameState::EXIT;
 			break;
 		}

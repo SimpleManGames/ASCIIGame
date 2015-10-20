@@ -1,0 +1,19 @@
++----------------+
+|ACSII Rogue Like|
++----------------+
+
+Basics:
+ WASD: To move
+    H: To use a health potion
+
+Enviroment:
+    #: Walls
+    C: Chest - Run into them to gain a armor, weapon, potion         or gold
+    .: Blank tile
+
+Enemies:
+    s: Snakes  - Easy
+    g: Goblins - Medium
+    b: Bandit  - Hard
+    O: Ogre    - Hardest
+    D: Dragon  - Imposible

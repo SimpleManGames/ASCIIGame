@@ -9,3 +9,29 @@ Post Mortum, ASCII Rogue Like by Riley Smith
 	And as in the style of a rogue like, you player data does get deleted when you die, so watch out. Speaking of player data, it is saved to a text file when you press escape to quit the game. 
 
 	The biggest learning curve I had was learning to output a map from a text file and then be able to interact with it like moving the player, using chest, and fighting enemies.
+
+
+- GameState switch
+  - Splash
+   - Draws Splash
+  - Menu
+   - Displays options
+   - User selects one
+   
+   - Continue
+    - Loads last player
+    - Plays the game
+     - Load/Draw level & UI
+     - Processes player's action ex.(Combat, chest, movement)
+     - Processes enemies movement
+    - Checks for exit
+     - If exit, saves current player if in game
+
+   - New
+    - Creates new player then plays
+
+   - How To play
+    - Displays main functions of the game
+
+   - Exit
+    - Leaves the game

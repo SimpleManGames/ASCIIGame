@@ -22,6 +22,8 @@ public:
 	vector<string> & getSplashData();
 	vector<string> & getMenuData();
 
+	vector<string>& getHowToData();
+
 	int getNumValid(int min, int max);
 	bool getValidKey(char key);
 
@@ -31,5 +33,6 @@ public:
 private:
 	vector<string>_splashData;
 	vector<string>_menuData;
+	vector<string>_howToData;
 };
 
