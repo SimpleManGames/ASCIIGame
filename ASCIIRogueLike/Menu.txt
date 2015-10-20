@@ -1,0 +1,5 @@
+Choose:
+[1] Continue
+[2] New
+[3] How to play
+[4] Exit

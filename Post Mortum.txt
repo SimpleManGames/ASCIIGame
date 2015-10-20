@@ -1,0 +1,11 @@
+Post Mortum, ASCII Rogue Like by Riley Smith
+
+	During production I really wanted to have a feel for the old style RPGS, just simple and basic. But as I was doing it, this seemed harder then just a graphical game. I didn't want to back down from a challenge so I keep going foward with it. 
+
+	One thing that helped in making the game was using a combination of cout and printf. Printf to display the map since its a tad bit faster and in this case it is very noticable. And cout for the simple things like to display combat text and stats. 
+
+	I was hoping to get multiple levels in the game but due to time and needed other features in the game one level had to do the job. As for the other things, enemies are kinda mindless walk using a random number generator to pick a direction, but when the player comes near they will track them down. I wanted to use a system like AStar pathing but didn't have time. 
+
+	And as in the style of a rogue like, you player data does get deleted when you die, so watch out. Speaking of player data, it is saved to a text file when you press escape to quit the game. 
+
+	The biggest learning curve I had was learning to output a map from a text file and then be able to interact with it like moving the player, using chest, and fighting enemies.
